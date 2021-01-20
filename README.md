@@ -37,3 +37,8 @@ python run_pretraining.py \
     --model-name electra_small_japanese \
     --hparams '{"debug": false, "do_train": true, "do_eval": false, "vocab_file": "data/vocab.txt", "model_sentencepiece_path": "model_sentence_piece/wiki-ja.model", "model_size": "small", "vocab_size": 32000, "max_seq_length": 512, "num_train_steps": 1000000, "train_batch_size": 64}'
 ```
+
+### How to run QA with squad format
+```
+python run_finetuning.py --data-dir data --model-name electra_small --hparams '{"task_names": ["squad"], "debug": false, "do_train": true, "do_eval": false, "model_size": "small", "max_seq_length": 512, "num_train_epochs": 30, "learning_rate": 3e-5 ,"doc_stride":128, "max_answer_length": 512, "vocab_size": 32000, "learning_rate": 3e-5}
+```
